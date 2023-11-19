@@ -39,7 +39,7 @@ export default function MoneyInput() {
     </section>
     <section>
       <label htmlFor="default-label" className={_styles.defaultLabel}>
-        <span className={_styles.specialLabel}><b>Label*</b></span>
+        <span className={_styles.specialLabel}>Label*</span>
         <input type="text" className={_styles.OnFocus} placeholder='Default' />
       </label>
     </section>

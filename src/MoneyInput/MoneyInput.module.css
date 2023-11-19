@@ -62,6 +62,7 @@ input:read-only {
     /* grid-template-columns: 1fr minmax(50ch, 70ch) 1fr; */
     /* grid-template-columns: 8ch 1fr; */
     max-width: 8ch;
+    font: var(--betterplace-typography-sm)
 }
 
 label {
@@ -78,6 +79,7 @@ label {
     padding: 1rem 1rem 4.5rem 1rem;
     border-radius: 8px;
     margin: 0.7rem 2rem 1rem 6rem;
+    font: var(--betterplace-typography-sm-bold)
 }
 
 .specialLabel {
