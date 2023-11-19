@@ -2,6 +2,8 @@ import _styles from './MoneyInput.module.css'
 
 export default function MoneyInput() {
   return (
+  <>
+  <nav>&nbsp;</nav>
   <main>
     <section className={_styles.wrapper}>
       <label htmlFor="default" >
@@ -44,6 +46,7 @@ export default function MoneyInput() {
       </label>
     </section>
   </main>
+  </>
   )
 }
 

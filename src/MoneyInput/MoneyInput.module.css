@@ -95,3 +95,11 @@ section > label {
     display: grid;
     grid-template-columns: max-content 1fr;
 }
+
+nav {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 2px;
+    margin-bottom: 3rem;
+    background-color: var(--betterplace-external-color-blue-twitter);
+}
