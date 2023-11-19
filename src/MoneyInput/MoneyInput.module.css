@@ -1,0 +1,93 @@
+input {
+    border-radius: 5px;
+    padding: 1rem 0.5rem;
+    /* margin: 1.5rem 0.5rem; */
+    border: 1px solid var(--betterplace-color-gray-400);
+    font-family: var(--betterplace-font-families-fira-sans);
+    /* &:focus {
+       outline: 2px solid var(--betterplace-color-green-800);
+       outline-offset: 2px; 
+    }  */
+}
+
+.margin {
+    margin: 2rem 0.5rem;
+}
+
+.wrapper {
+    display: grid; 
+}
+input:read-only {
+    background-color: #f8f8f8;
+}
+
+.focus {
+    outline: 2px solid var(--betterplace-color-green-800);
+    outline-offset: 2px; 
+} 
+
+
+.OnHover:focus, .OnFocus:focus {
+    outline: 2px solid var(--betterplace-color-green-800);
+    outline-offset: 2px; 
+} 
+
+.OnHover:hover {
+    box-shadow: var(--betterplace-shadow-outer-neutral-soft-2);
+}
+
+.error {
+    outline: 2px solid var(--betterplace-color-red-700);
+}
+
+.error:hover {
+    box-shadow: var(--betterplace-shadow-outer-neutral-soft-3);
+}
+
+.errorAndFocused {
+    outline: 2px solid var(--betterplace-color-red-700);
+    &:focus {
+        border: 2px solid var(--betterplace-color-green-700);
+        outline-offset: -6px;
+        border-radius: 6px;
+        padding-left: 12px
+    }
+}
+
+.labelLength {
+    display: inline-flex;
+    align-items: center;
+    /* grid-template-columns: 1fr minmax(50ch, 70ch) 1fr; */
+    /* grid-template-columns: 8ch 1fr; */
+    max-width: 8ch;
+}
+
+label {
+    /* display: flex; */
+    font-family: var(--betterplace-font-families-fira-sans);
+    margin-left: 1rem;
+}
+
+
+.defaultLabel {
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed var(--betterplace-color-purple-300);
+    padding: 1rem 1rem 4.5rem 1rem;
+    border-radius: 8px;
+    margin: 0.7rem 2rem 1rem 6rem;
+}
+
+.specialLabel {
+    padding-bottom: 0.3rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+section > label {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
