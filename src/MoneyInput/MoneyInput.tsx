@@ -11,7 +11,7 @@ interface Props {
 // - to test onChange and onBlur the value prop must be removed
 // - I have used label* input to show results on change
 
-// ***If we have an initial value on render only then locale works, to check other functionality we have to remove these ***
+// ***If we have an initial value on render only then locale works, to check other functionality we have to remove these props ***
 // locale is either us for dollars or de for euro
 
 const MoneyInput = ({value, locale='us'}: Props) => {
