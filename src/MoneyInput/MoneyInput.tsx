@@ -10,14 +10,13 @@ interface Props {
 // - to test onChange and onBlur the value prop must be removed
 // - I have used label* input to show results on change
 
-const MoneyInput = ({value}: Props) => {
+const MoneyInput = ({value=1000}: Props) => {
   
   const [euro, setEuro] = useState<number | string>(0)
 
- 
   useEffect(() => {
     if (value !== undefined && !isNaN(value)) {
-      console.log(value);
+      console.log(value) //value we provide initally;
       const converted = (value / 100).toFixed(2)
       setEuro(converted);
     } else {
@@ -48,7 +47,7 @@ const MoneyInput = ({value}: Props) => {
     <section className={_styles.wrapper}>
       <label htmlFor="default" >
         <span className={_styles.labelLength}>State: Default</span>
-        <input type="text" onChange={handleChange} onBlur={handleBlur} className={`${_styles.OnFocus} ${_styles.margin}`} placeholder='Text'/>
+        <input type="number" onChange={handleChange} onBlur={handleBlur} className={`${_styles.OnFocus} ${_styles.margin}`} placeholder='Text'/>
       </label>   
       <label htmlFor="hover">
         <span className={_styles.labelLength}>State: Hover</span>
