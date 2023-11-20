@@ -47,41 +47,41 @@ const MoneyInput = ({value=1000}: Props) => {
     <section className={_styles.wrapper}>
       <label htmlFor="default" >
         <span className={_styles.labelLength}>State: Default</span>
-        <input type="number" onChange={handleChange} onBlur={handleBlur} className={`${_styles.OnFocus} ${_styles.margin}`} placeholder='Text'/>
+        <input type="number" onChange={handleChange} onBlur={handleBlur} className={`${_styles.OnFocus} ${_styles.margin}`} placeholder='Text' id='default'/>
       </label>   
       <label htmlFor="hover">
         <span className={_styles.labelLength}>State: Hover</span>
-        <input type="text" className={`${_styles.OnHover} ${_styles.margin}`} placeholder='Text'/>
+        <input type="text" className={`${_styles.OnHover} ${_styles.margin}`} placeholder='Text' id='hover'/>
       </label>
       <label htmlFor="focus">
         <span className={_styles.labelLength}>State: &nbsp; Focus</span>
-        <input type="text" className={`${_styles.focus} ${_styles.margin}`} placeholder='Text'/>
+        <input type="text" className={`${_styles.focus} ${_styles.margin}`} placeholder='Text' id='focus'/>
       </label>
       <label htmlFor="error">
         <span className={_styles.labelLength}>State: Error</span>
-        <input type="text" className={`${_styles.error} ${_styles.margin}`} placeholder='Text'/>
+        <input type="text" className={`${_styles.error} ${_styles.margin}`} placeholder='Text' id='error'/>
       </label>
       <label htmlFor="error-hover">
         <span className={_styles.labelLength}>State: Error +&nbsp;Hover</span>
-        <input type="text" className={`${_styles.error} ${_styles.margin}`} placeholder='Text'/>
+        <input type="text" className={`${_styles.error} ${_styles.margin}`} placeholder='Text' id='error-hover'/>
       </label>
       <label htmlFor="error-focus">
         <span className={_styles.labelLength}>State: Error +&nbsp;Focus</span>
-        <input type="text" className={`${_styles.errorAndFocused} ${_styles.margin}`} placeholder='Text' />
+        <input type="text" className={`${_styles.errorAndFocused} ${_styles.margin}`} placeholder='Text' id='error-focus'/>
       </label>
       <label htmlFor="disabled">
         <span className={_styles.labelLength}>State: Disabled</span>
-        <input type="text" disabled className={_styles.margin} placeholder='Text'/>
+        <input type="text" disabled className={_styles.margin} placeholder='Text' id='disabled'/>
       </label>
       <label htmlFor="disabled-focus">
         <span className={_styles.labelLength}>State: Disabled +&nbsp;Focus</span>
-        <input type="text" readOnly tabIndex={0} aria-disabled={true} className={`${_styles.OnFocus} ${_styles.margin}`} placeholder='Text' />
+        <input type="text" readOnly tabIndex={0} aria-disabled={true} className={`${_styles.OnFocus} ${_styles.margin}`} placeholder='Text' id='disabled-focus' />
       </label>
     </section>
     <section>
       <label htmlFor="default-label" className={_styles.defaultLabel}>
         <span className={_styles.specialLabel}>Label*</span>
-        <input type="text" value={euro} onChange={handleChange} onBlur={handleBlur} className={_styles.OnFocus} placeholder='Default' />
+        <input type="text" value={euro} onChange={handleChange} onBlur={handleBlur} className={_styles.OnFocus} placeholder='Default' id='default-label'/>
       </label>
     </section>
   </main>
