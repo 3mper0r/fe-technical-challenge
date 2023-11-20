@@ -1,6 +1,46 @@
+import { ChangeEvent,FocusEvent, useEffect, useState } from 'react'
 import _styles from './MoneyInput.module.css'
 
-export default function MoneyInput() {
+interface Props {
+  value?: number;
+}
+
+// - initial value is always 0, then when we type in input, input changes onChange and onBlur (logges in console)
+// - but if we provide a number, the input shows the amount in Euro (converts from cent) and we cannot change that
+// - to test onChange and onBlur the value prop must be removed
+// - I have used label* input to show results on change
+
+const MoneyInput = ({value}: Props) => {
+  
+  const [euro, setEuro] = useState<number | string>(0)
+
+ 
+  useEffect(() => {
+    if (value !== undefined && !isNaN(value)) {
+      console.log(value);
+      const converted = (value / 100).toFixed(2)
+      setEuro(converted);
+    } else {
+      return
+    }
+  }, []);
+
+  const convertToCents = (euroValue: number) =>{
+    return Math.round(Number(euroValue) * 100)
+  }
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = Number(event.target.value)    
+    setEuro(convertToCents(inputValue))
+    console.log(`Converted value is: ${convertToCents(inputValue)}`); 
+  }
+
+  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+    const inputValue = Number(event.target.value)    
+    setEuro(convertToCents(inputValue))
+    console.log(`Converted value is: ${convertToCents(inputValue)} (on blur)`);
+  }
+  
   return (
   <>
   <nav>&nbsp;</nav>
@@ -8,7 +48,7 @@ export default function MoneyInput() {
     <section className={_styles.wrapper}>
       <label htmlFor="default" >
         <span className={_styles.labelLength}>State: Default</span>
-        <input type="text" className={`${_styles.OnFocus} ${_styles.margin}`} placeholder='Text'/>
+        <input type="text" onChange={handleChange} onBlur={handleBlur} className={`${_styles.OnFocus} ${_styles.margin}`} placeholder='Text'/>
       </label>   
       <label htmlFor="hover">
         <span className={_styles.labelLength}>State: Hover</span>
@@ -42,7 +82,7 @@ export default function MoneyInput() {
     <section>
       <label htmlFor="default-label" className={_styles.defaultLabel}>
         <span className={_styles.specialLabel}>Label*</span>
-        <input type="text" className={_styles.OnFocus} placeholder='Default' />
+        <input type="text" value={euro} onChange={handleChange} onBlur={handleBlur} className={_styles.OnFocus} placeholder='Default' />
       </label>
     </section>
   </main>
@@ -50,5 +90,4 @@ export default function MoneyInput() {
   )
 }
 
-
-// {`${styles.description} ${styles.yellow}`}
+export default MoneyInput
