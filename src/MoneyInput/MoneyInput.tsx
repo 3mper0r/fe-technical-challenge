@@ -18,7 +18,7 @@ const MoneyInput = ({value, locale='us'}: Props) => {
   
   const [euro, setEuro] = useState<number | string>(0)
   
-  
+
   const formatter = new Intl.NumberFormat(`en-${locale}`, {
     style: 'currency',
     currency: locale === 'de' ? 'EUR' : 'USD',

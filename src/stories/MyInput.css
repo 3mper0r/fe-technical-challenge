@@ -1,0 +1,22 @@
+.my-input.onHover {
+  box-shadow: var(--betterplace-shadow-outer-neutral-soft-2);
+}
+
+.my-input.onFocus {
+  outline: 2px solid var(--betterplace-color-green-800);
+  outline-offset: 2px; 
+} 
+
+.my-input.onError {
+  outline: 2px solid var(--betterplace-color-red-700)
+} 
+
+.my-input.onErrorAndFocus {
+  outline: 2px solid var(--betterplace-color-red-700);
+  
+  border: 2px solid var(--betterplace-color-green-700);
+  outline-offset: -6px;
+  border-radius: 6px;
+  padding-left: 12px
+  
+}
