@@ -8,13 +8,12 @@ export default {
 } satisfies Meta<typeof MyInput>
 
 
-// export const Default = () => <MyInput className={}/>;
+export const Default = () => <MyInput className="onDefault"/>;
 
 export const OnHover = () => <MyInput className="onHover" />;
 
-export const OnError = () => <MyInput className="onError" />;
-
 export const OnFocus = () => <MyInput className="onFocus" />;
 
+export const OnError = () => <MyInput className="onError" />;
+
 export const OnErrorAndFocus = () => <MyInput className="onErrorAndFocus"/>
-export const Default = {}
